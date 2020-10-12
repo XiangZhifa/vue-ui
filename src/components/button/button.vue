@@ -5,7 +5,8 @@
 <script>
 	import {oneOf} from '../../utils/assist';
 
-	const prefixCls = 'ivu-btn';
+	//样式的统一前缀
+	const prefixCls = 'vu-btn';
 
 	export default {
 		name: "button",
