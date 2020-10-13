@@ -89,7 +89,3 @@
 		}
 	}
 </script>
-
-<style>
-	@import "../../styles/components/button.css";
-</style>

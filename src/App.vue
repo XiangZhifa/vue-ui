@@ -16,23 +16,32 @@
 			<v-button type="dashed" class="mgl-20">dashed</v-button>
 			<v-button type="text" class="mgl-20">text</v-button>
 		</div>
+		<div class="component-divide" style="width: 100%;height: 60px; position: relative">
+			<v-spin fix></v-spin>
+		</div>
 	</div>
 </template>
 
 <script>
 	//Button组件
 	import VButton from './components/button';
+	//Spin组件
+	import VSpin from './components/spin'
 
 	export default {
 		components: {
-			VButton
+			VButton,
+			VSpin
 		},
 		mounted() {
 		},
-		methods: {
-		}
+		methods: {}
 	}
 </script>
+
+<style>
+	@import './styles/index.css';
+</style>
 
 <style scoped lang="less">
 	.component-divide {
