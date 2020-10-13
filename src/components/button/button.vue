@@ -1,5 +1,5 @@
 <template>
-	<component :is="tagName" :class="classes" :disabled="itemDisabled" @click="handleClickLink" v-bind="tagProps">
+	<component :is="tagName" :class="classes" :disabled="itemDisabled" @click="handleBtnClick" v-bind="tagProps">
 		<div class="vu-btn-slot" v-if="showSlot" ref="slot">
 			<slot></slot>
 		</div>
@@ -79,15 +79,12 @@
 			},
 
 			showSlot() {
-				console.log(this.$slots);
 				return !!this.$slots.default;
 			},
 		},
 		methods: {
-			handleClickLink(event) {
+			handleBtnClick(event) {
 				this.$emit('click', event);
-				const openInNewWindow = event.ctrlKey || event.metaKey;
-				this.handleCheckClick(event, openInNewWindow);
 			}
 		}
 	}
