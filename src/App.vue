@@ -2,7 +2,8 @@
 	<div id="app">
 		<div class="component-divide component-desc">
 			<a>
-				按钮：可以设置type为
+				按钮：<span>v-button</span>
+				可以设置type为
 				<span>default</span>
 				<span>primary</span>
 				<span>dashed</span>
@@ -16,8 +17,49 @@
 			<v-button type="dashed" class="mgl-20">dashed</v-button>
 			<v-button type="text" class="mgl-20">text</v-button>
 		</div>
-		<div class="component-divide" style="width: 100%;height: 60px; position: relative">
+		<div class="component-divide component-desc" style="margin-top: 40px;">
+			<a>
+				遮罩：<span>v-spin</span>
+			</a>
+		</div>
+		<div class="component-divide component-desc" style="width: 100%;height: 40px; position: relative">
+			<a>
+				基础用法
+			</a>
+			<v-spin></v-spin>
+		</div>
+		<div class="component-divide component-desc" style="width: 100%;height: 40px; position: relative">
+			<a>
+				三种尺寸
+				<span>small</span>
+				<span>default</span>
+				<span>large</span>
+			</a>
+			<v-spin size="large"></v-spin>
+		</div>
+		<div class="component-divide component-desc" style="width: 100%;height: 40px; position: relative;">
+			<a>
+				居中固定
+			</a>
 			<v-spin fix></v-spin>
+		</div>
+		<div class="component-divide component-desc" style="width: 100%;height: 40px; position: relative;">
+			<a>
+				自定义
+			</a>
+			<v-spin :show-text="true" fix>
+				<div>
+					加载中
+					<div>
+						<v-button type="primary" class="mgl-20">返回项目</v-button>
+					</div>
+				</div>
+			</v-spin>
+		</div>
+		<div class="component-divide component-desc" style="width: 100%;height: 40px; position: relative;">
+			<div>
+				<v-button type="primary" @click="handleSpinShow">整页加载</v-button>
+			</div>
 		</div>
 	</div>
 </template>
@@ -35,7 +77,23 @@
 		},
 		mounted() {
 		},
-		methods: {}
+		methods: {
+			handleSpinShow() {
+				this.$Spin.show({
+					render: (createDom) => {
+						return createDom('div', [
+							createDom('div', '加载中'),
+							createDom('button', {
+								'class': 'vu-btn vu-btn-primary',
+							},'asd'),
+						])
+					}
+				});
+				setTimeout(() => {
+					this.$Spin.hide();
+				}, 3000);
+			}
+		}
 	}
 </script>
 
@@ -45,7 +103,7 @@
 
 <style scoped lang="less">
 	.component-divide {
-		margin-top: 20px;
+		margin-top: 10px;
 		padding: 0 20px;
 	}
 

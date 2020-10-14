@@ -34,15 +34,12 @@
 			fullscreen: {
 				type: Boolean,
 				default: false
-			},
-			showText: {
-				type: Boolean,
-				default: false
 			}
 		},
 		data() {
 			return {
-				visible: false
+				visible: false,
+				showText: false,
 			};
 		},
 		computed: {
@@ -73,6 +70,9 @@
 					return true;
 				}
 			}
+		},
+		mounted () {
+			this.showText = this.$slots.default !== undefined;
 		},
 		watch: {
 			visible(val) {

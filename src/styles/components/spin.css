@@ -26,41 +26,46 @@
     animation: ani-spin-bounce 1s 0s ease-in-out infinite;
 }
 
-.vu-spin .vu-spin-large-dot {
-    position: relative;
-    display: block;
-    border-radius: 50%;
-    background-color: #4285F4;
-    width: 32px;
-    height: 32px;
-    animation: ani-spin-bounce 1s 0s ease-in-out infinite;
-}
-
-.vu-spin .vu-spin-small-dot {
-    position: relative;
-    display: block;
-    border-radius: 50%;
-    background-color: #4285F4;
+.vu-spin-small .vu-spin-dot {
     width: 12px;
     height: 12px;
-    animation: ani-spin-bounce 1s 0s ease-in-out infinite;
 }
 
-.vu-spin,.vu-spin-fix {
+.vu-spin-large .vu-spin-dot {
+    width: 32px;
+    height: 32px;
+}
+
+.vu-spin-fix {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 8;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: hsla(0, 0%, 100%, .9);
 }
 
-.vu-spin .vu-spin-fullscreen {
-    z-index: 2010;
+.vu-spin-fix .vu-spin-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.vu-spin .vu-spin-fullscreen .vu-spin-wrapper {
+.vu-spin-fix .vu-spin-dot {
+    display: inline-block;
+}
+
+.vu-spin-show-text .vu-spin-text {
+    display: block;
+}
+
+.vu-spin-show-text .vu-spin-dot, .vu-spin-text {
+    display: none;
+}
+
+.vu-spin-fullscreen-wrapper {
     position: fixed;
     top: 0;
     right: 0;
@@ -68,23 +73,6 @@
     left: 0;
 }
 
-.vu-spin .vu-spin-fix .vu-spin-main {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.vu-spin-fullscreen {
+    z-index: 2010;
 }
-
-.vu-spin .vu-spin-fix .vu-spin-dot {
-    display: inline-block;
-}
-
-.vu-spin .vu-spin-text, .vu-spin-show-text .vu-spin-dot {
-    display: none;
-}
-
-.vu-spin,.vu-spin-show-text .vu-spin-text {
-    display: block;
-}
-

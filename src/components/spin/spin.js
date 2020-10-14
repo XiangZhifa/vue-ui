@@ -3,7 +3,7 @@ import Spin from './spin.vue';
 
 import {transferIndex, transferIncrease} from '../../utils/transfer-queue';
 
-//设置loading遮罩需要提升的层级
+//设置loading遮罩的 z-index
 function handleGetIndex() {
 	transferIncrease();
 	return transferIndex;
