@@ -85,7 +85,7 @@
 					全屏加载：设置 <span>fullScreen属性</span> 或 采用函数式渲染
 				</a>
 			</div>
-			<div class="spin-demo">
+			<div class="spin-demo" style="line-height: 100px">
 				<v-button type="primary" @click="handleSpinShow">点击全屏加载</v-button>
 			</div>
 		</article>
@@ -109,7 +109,7 @@
 				</a>
 			</div>
 			<div class="component-divide component-demo">
-				<v-page :total="100" show-elevator show-total></v-page>
+				<v-page :total="100" :current="2" show-elevator show-total></v-page>
 			</div>
 
 			<div class="component-divide component-desc component-child-desc">
@@ -135,6 +135,23 @@
 					</template>
 					<template v-slot:nextJump>
 						<i class="iconfont iconfanhui page-next-jump-icon"></i>
+					</template>
+				</v-page>
+			</div>
+
+			<div class="component-divide component-desc component-child-desc">
+				<a>
+					简单模式：
+					设置属性 <span> simple </span>
+				</a>
+			</div>
+			<div class="component-divide component-demo">
+				<v-page :total="100" :current="3" simple>
+					<template v-slot:prev>
+						<i class="iconfont iconjiantouarrow486 page-prev-icon"></i>
+					</template>
+					<template v-slot:next>
+						<i class="iconfont iconjiantouarrow486 page-next-icon"></i>
 					</template>
 				</v-page>
 			</div>

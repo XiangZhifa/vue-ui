@@ -2,7 +2,10 @@
 	<!--Simple模式-->
 	<ul :class="simpleWrapClasses" :style="styles" v-if="simple">
 		<li :class="prevClasses" @click="prev">
-			<a><</a>
+			<a v-if="prevSlot">
+				<slot name="prev"></slot>
+			</a>
+			<a v-else><</a>
 		</li>
 		<div :class="simplePagerClasses" :title="currentPage + '/' + allPages">
 			<input type="text" :value="currentPage" autocomplete="off" spellcheck="false" :disabled="disabled"
@@ -11,7 +14,10 @@
 			{{ allPages }}
 		</div>
 		<li :class="nextClasses" @click="next">
-			<a>></a>
+			<a v-if="nextSlot">
+				<slot name="next"></slot>
+			</a>
+			<a v-else>></a>
 		</li>
 	</ul>
 	<!--标准模式-->

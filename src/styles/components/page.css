@@ -242,3 +242,44 @@
     border-radius: 3px;
     width: 44px;
 }
+
+.vu-page-simple .vu-page-next, .vu-page-simple .vu-page-prev {
+    margin: 0;
+    border: 0;
+    height: 24px;
+    line-height: normal;
+    font-size: 18px;
+}
+
+.vu-page-simple .vu-page-simple-pager {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #515a6e;
+}
+
+.vu-page-simple .vu-page-simple-pager input {
+    display: inline-block;
+    line-height: 1.5;
+    font-size: 14px;
+    color: #515a6e;
+    background-image: none;
+    position: relative;
+    cursor: text;
+    width: 30px;
+    height: 24px;
+    margin: 0 8px;
+    padding: 5px 6px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #fff;
+    outline: 0;
+    border: 1px solid #dcdee2;
+    border-radius: 4px;
+    transition: border-color .2s ease-in-out;
+}
+
+.vu-page-simple .vu-page-simple-pager span {
+    padding: 0 8px 0 2px;
+}
