@@ -23,7 +23,8 @@
         </span>
 		<li :class="prevClasses" @click="prev">
 			<a>
-				<template v-if="prevText !== ''">{{ prevText }}</template>
+				<slot name="prev" v-if="prevSlot"></slot>
+				<template v-else-if="prevText !== ''">{{ prevText }}</template>
 				<a v-else> < </a>
 			</a>
 		</li>
@@ -31,18 +32,18 @@
 			<a>1</a>
 		</li>
 		<li title="向前5页" v-if="currentPage > 5" :class="[prefixCls + '-item-jump-prev']" @click="fastPrev">
-			<a> << </a>
+			<a v-if="prevJumpSlot">
+				<slot name="prevJump"></slot>
+			</a>
+			<a v-else> << </a>
 		</li>
-		<li :title="currentPage - 3" v-if="currentPage === 5" :class="[prefixCls + '-item']"
-			@click="changePage(currentPage - 3)">
+		<li :title="currentPage - 3" v-if="currentPage === 5" :class="[prefixCls + '-item']" @click="changePage(currentPage - 3)">
 			<a>{{ currentPage - 3 }}</a>
 		</li>
-		<li :title="currentPage - 2" v-if="currentPage - 2 > 1" :class="[prefixCls + '-item']"
-			@click="changePage(currentPage - 2)">
+		<li :title="currentPage - 2" v-if="currentPage - 2 > 1" :class="[prefixCls + '-item']" @click="changePage(currentPage - 2)">
 			<a>{{ currentPage - 2 }}</a>
 		</li>
-		<li :title="currentPage - 1" v-if="currentPage - 1 > 1" :class="[prefixCls + '-item']"
-			@click="changePage(currentPage - 1)">
+		<li :title="currentPage - 1" v-if="currentPage - 1 > 1" :class="[prefixCls + '-item']" @click="changePage(currentPage - 1)">
 			<a>{{ currentPage - 1 }}</a>
 		</li>
 		<li :title="currentPage" v-if="+currentPage !== 1 && +currentPage !== +allPages"
@@ -62,15 +63,19 @@
 			<a>{{ currentPage + 3 }}</a>
 		</li>
 		<li title="向后5页" v-if="allPages - currentPage >= 5" :class="[prefixCls + '-item-jump-next']" @click="fastNext">
-			<a> >> </a>
+			<a v-if="nextJumpSlot">
+				<slot name="nextJump"></slot>
+			</a>
+			<a v-else> >> </a>
 		</li>
 		<li :title="allPages" v-if="allPages > 1" :class="lastPageClasses" @click="changePage(allPages)">
 			<a>{{ allPages }}</a>
 		</li>
 		<li :class="nextClasses" @click="next">
 			<a>
-				<template v-if="nextText !== ''">{{ nextText }}</template>
-				<a> > </a>
+				<slot name="next" v-if="nextSlot"></slot>
+				<template v-else-if="nextText !== ''">{{ nextText }}</template>
+				<a v-else> > </a>
 			</a>
 		</li>
 		<Options :show-sizer="showSizer"
@@ -220,6 +225,12 @@
 					}
 				];
 			},
+			prevSlot() {
+				return !!this.$slots.prev&&!![...this.$slots.prev].length;
+			},
+			prevJumpSlot() {
+				return !!this.$slots.prevJump&&!![...this.$slots.prevJump].length;
+			},
 			prevClasses() {
 				return [
 					`${prefixCls}-prev`,
@@ -228,6 +239,12 @@
 						[`${prefixCls}-custom-text`]: this.prevText !== ''
 					}
 				];
+			},
+			nextSlot() {
+				return !!this.$slots.next&&!![...this.$slots.next].length;
+			},
+			nextJumpSlot() {
+				return !!this.$slots.nextJump&&!![...this.$slots.nextJump].length;
 			},
 			nextClasses() {
 				return [
@@ -335,6 +352,6 @@
 					this.changePage(page);
 				}
 			}
-		}
+		},
 	};
 </script>

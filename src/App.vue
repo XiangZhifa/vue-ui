@@ -114,12 +114,28 @@
 
 			<div class="component-divide component-desc component-child-desc">
 				<a>
-					自定义：通过具名插槽自定义图标
+					自定义：通过具名插槽
+					<span> v-slot : prev </span>
+					<span> v-slot : next </span>
+					<span> v-slot : prevJump</span>
+					<span> v-slot : nextJump</span>
+					使用自定义图标（推荐使用字体图标）
 				</a>
 			</div>
 			<div class="component-divide component-demo">
 				<v-page :total="100" show-elevator show-total>
-
+					<template v-slot:prev>
+						<i class="iconfont iconjiantouarrow486 page-prev-icon"></i>
+					</template>
+					<template v-slot:prevJump>
+						<i class="iconfont iconfanhui page-prev-jump-icon"></i>
+					</template>
+					<template v-slot:next>
+						<i class="iconfont iconjiantouarrow486 page-next-icon"></i>
+					</template>
+					<template v-slot:nextJump>
+						<i class="iconfont iconfanhui page-next-jump-icon"></i>
+					</template>
 				</v-page>
 			</div>
 		</arcticle>
@@ -166,6 +182,7 @@
 </script>
 
 <style>
+	@import url("https://at.alicdn.com/t/font_1116562_9gr44snqvsl.css");
 	@import './styles/index.css';
 </style>
 
@@ -224,6 +241,25 @@
 			padding: 5px 10px;
 			display: inline-block;
 			margin-top: 15px;
+		}
+
+		.page-prev-icon {
+			transform: rotate(90deg);
+			display: inline-block;
+		}
+
+		.page-prev-jump-icon {
+			display: inline-block;
+		}
+
+		.page-next-icon {
+			transform: rotate(270deg);
+			display: inline-block;
+		}
+
+		.page-next-jump-icon {
+			transform: rotate(180deg);
+			display: inline-block;
 		}
 	}
 </style>
