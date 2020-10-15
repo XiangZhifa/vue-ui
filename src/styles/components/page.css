@@ -1,0 +1,244 @@
+.vu-page {
+    margin: 0;
+    padding: 0;
+}
+
+.vu-page:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.vu-page-disabled {
+    cursor: not-allowed;
+}
+
+.vu-page-next, .vu-page-prev {
+    background-color: #fff;
+}
+
+.vu-page-next:hover, .vu-page-prev:hover {
+    border-color: #4285F4;
+}
+
+.vu-page-next:hover a, .vu-page-prev:hover a {
+    color: #4285F4;
+}
+
+.vu-page-item-jump-next, .vu-page-item-jump-prev, .vu-page-next, .vu-page-prev {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-width: 32px;
+    height: 32px;
+    line-height: 30px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    color: #666;
+    font-family: Arial;
+    border: 1px solid #dcdee2;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
+.vu-page-item-jump-next, .vu-page-item-jump-prev, .vu-page-prev {
+    margin-right: 4px;
+}
+
+.vu-page-item-jump-next a, .vu-page-item-jump-prev a {
+    color: #4285F4;
+}
+
+.vu-page-disabled a {
+    color: #ccc;
+}
+
+.vu-page-next a, .vu-page-prev a {
+    color: #666;
+    font-size: 14px;
+}
+
+.vu-page-disabled {
+    cursor: not-allowed;
+}
+
+.vu-page-disabled a {
+    color: #dcdee2;
+}
+
+.vu-page-disabled:hover {
+    border-color: #dcdee2;
+}
+
+.vu-page-disabled:hover a {
+    color: #dcdee2;
+}
+
+.vu-page-item-active {
+    border-color: #4285F4;
+}
+
+.vu-page-item {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 4px;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    user-select: none;
+    cursor: pointer;
+    font-family: Arial;
+    font-weight: 500;
+    border: 1px solid #dcdee2;
+    border-radius: 4px;
+    transition: border .2s ease-in-out, color .2s ease-in-out;
+}
+
+.vu-page-item a {
+    margin: 0 6px;
+    text-decoration: none;
+    color: #515a6e;
+}
+
+.vu-page-item:hover {
+    color: #4285F4;
+    border-color: #4285F4;
+}
+
+.vu-page-item:hover a {
+    color: #4285F4;
+}
+
+.vu-page-item-active {
+    border-color: #4285F4;
+}
+
+.vu-page-item-active:hover a, .vu-page-item-active a {
+    color: #4285F4;
+}
+
+.vu-page-item-jump-next, .vu-page-item-jump-prev {
+    border-color: transparent;
+}
+
+.vu-page-item-jump-next, .vu-page-item-jump-prev, .vu-page-prev {
+    margin-right: 4px;
+}
+
+.vu-page-item-jump-next:after, .vu-page-item-jump-prev:after {
+    content: "\2022\2022\2022";
+    display: block;
+    letter-spacing: 1px;
+    color: #ccc;
+    text-align: center;
+}
+
+.vu-page-item-jump-next:hover:after, .vu-page-item-jump-next a, .vu-page-item-jump-prev:hover:after, .vu-page-item-jump-prev a {
+    display: none;
+}
+
+.vu-page-item-jump-next:hover a, .vu-page-item-jump-prev:hover a {
+    display: inline;
+}
+
+.vu-page-options {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+.vu-page-total {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 10px;
+    color: #515a6e;
+    vertical-align: middle;
+}
+
+.vu-page-options-elevator {
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+    line-height: 32px;
+    color: #515a6e;
+}
+
+.vu-page-options-elevator input {
+    display: inline-block;
+    height: 24px;
+    line-height: 1.5;
+    padding: 4px 8px;
+    font-size: 14px;
+    border: 1px solid #dcdee2;
+    color: #515a6e;
+    background-color: #fff;
+    background-image: none;
+    cursor: text;
+    transition: border .2s ease-in-out, background .2s ease-in-out, box-shadow .2s ease-in-out;
+    border-radius: 4px;
+    margin: 0 8px;
+    width: 32px;
+    text-align: center;
+    position: relative;
+    bottom: 1px;
+}
+
+.vu-page-options-elevator input:hover {
+    border-color: #4285F4;
+}
+
+.vu-page-options-elevator input:focus {
+    border-color: #4285F4;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+}
+
+.vu-page.mini .vu-page-prev {
+    margin: 0;
+    min-width: 24px;
+    height: 24px;
+    line-height: 22px;
+    border: 0;
+}
+
+.vu-page.mini .vu-page-next, .vu-page.mini .vu-page-prev {
+    margin: 0;
+    min-width: 24px;
+    height: 24px;
+    line-height: 22px;
+    border: 0;
+}
+
+.vu-page.mini .vu-page-item {
+    border: 0;
+    margin: 0;
+    min-width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 3px;
+}
+
+.vu-page.mini .vu-page-options-elevator {
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    bottom: 1px;
+}
+
+.vu-page.mini .vu-page-options-elevator input {
+    padding: 0;
+    height: 22px;
+    border-radius: 3px;
+    width: 44px;
+}

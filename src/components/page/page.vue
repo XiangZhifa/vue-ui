@@ -5,7 +5,8 @@
 			<a><</a>
 		</li>
 		<div :class="simplePagerClasses" :title="currentPage + '/' + allPages">
-			<input type="text" :value="currentPage" autocomplete="off" spellcheck="false" :disabled="disabled" @keydown="keyDown" @keyup="keyUp" @change="keyUp">
+			<input type="text" :value="currentPage" autocomplete="off" spellcheck="false" :disabled="disabled"
+				   @keydown="keyDown" @keyup="keyUp" @change="keyUp">
 			<span>/</span>
 			{{ allPages }}
 		</div>
@@ -29,28 +30,35 @@
 		<li :class="firstPageClasses" @click="changePage(1)">
 			<a>1</a>
 		</li>
-		<li v-if="currentPage > 5" :class="[prefixCls + '-item-jump-prev']" @click="fastPrev">
+		<li title="向前5页" v-if="currentPage > 5" :class="[prefixCls + '-item-jump-prev']" @click="fastPrev">
 			<a> << </a>
 		</li>
-		<li :title="currentPage - 3" v-if="currentPage === 5" :class="[prefixCls + '-item']" @click="changePage(currentPage - 3)">
+		<li :title="currentPage - 3" v-if="currentPage === 5" :class="[prefixCls + '-item']"
+			@click="changePage(currentPage - 3)">
 			<a>{{ currentPage - 3 }}</a>
 		</li>
-		<li :title="currentPage - 2" v-if="currentPage - 2 > 1" :class="[prefixCls + '-item']" @click="changePage(currentPage - 2)">
+		<li :title="currentPage - 2" v-if="currentPage - 2 > 1" :class="[prefixCls + '-item']"
+			@click="changePage(currentPage - 2)">
 			<a>{{ currentPage - 2 }}</a>
 		</li>
-		<li :title="currentPage - 1" v-if="currentPage - 1 > 1" :class="[prefixCls + '-item']" @click="changePage(currentPage - 1)">
+		<li :title="currentPage - 1" v-if="currentPage - 1 > 1" :class="[prefixCls + '-item']"
+			@click="changePage(currentPage - 1)">
 			<a>{{ currentPage - 1 }}</a>
 		</li>
-		<li :title="currentPage" v-if="+currentPage !== 1 && +currentPage !== +allPages" :class="[prefixCls + '-item',prefixCls + '-item-active']">
+		<li :title="currentPage" v-if="+currentPage !== 1 && +currentPage !== +allPages"
+			:class="[prefixCls + '-item',prefixCls + '-item-active']">
 			<a>{{ currentPage }}</a>
 		</li>
-		<li :title="currentPage + 1" v-if="currentPage + 1 < allPages" :class="[prefixCls + '-item']" @click="changePage(currentPage + 1)">
+		<li :title="currentPage + 1" v-if="currentPage + 1 < allPages" :class="[prefixCls + '-item']"
+			@click="changePage(currentPage + 1)">
 			<a>{{ currentPage + 1 }}</a>
 		</li>
-		<li :title="currentPage + 2" v-if="currentPage + 2 < allPages" :class="[prefixCls + '-item']" @click="changePage(currentPage + 2)">
+		<li :title="currentPage + 2" v-if="currentPage + 2 < allPages" :class="[prefixCls + '-item']"
+			@click="changePage(currentPage + 2)">
 			<a>{{ currentPage + 2 }}</a>
 		</li>
-		<li :title="currentPage + 3" v-if="allPages - currentPage === 4" :class="[prefixCls + '-item']" @click="changePage(currentPage + 3)">
+		<li :title="currentPage + 3" v-if="allPages - currentPage === 4" :class="[prefixCls + '-item']"
+			@click="changePage(currentPage + 3)">
 			<a>{{ currentPage + 3 }}</a>
 		</li>
 		<li title="向后5页" v-if="allPages - currentPage >= 5" :class="[prefixCls + '-item-jump-next']" @click="fastNext">
@@ -66,18 +74,18 @@
 			</a>
 		</li>
 		<Options :show-sizer="showSizer"
-			:page-size="currentPageSize"
-			:page-size-opts="pageSizeOpts"
-			:placement="placement"
-			:transfer="transfer"
-			:show-elevator="showElevator"
-			:_current.once="currentPage"
-			:current="currentPage"
-			:disabled="disabled"
-			:all-pages="allPages"
-			:is-small="isSmall"
-			@on-size="onSize"
-			@on-page="onPage">
+				 :page-size="currentPageSize"
+				 :page-size-opts="pageSizeOpts"
+				 :placement="placement"
+				 :transfer="transfer"
+				 :show-elevator="showElevator"
+				 :_current.once="currentPage"
+				 :current="currentPage"
+				 :disabled="disabled"
+				 :all-pages="allPages"
+				 :is-small="isSmall"
+				 @on-size="onSize"
+				 @on-page="onPage">
 		</Options>
 	</ul>
 </template>
