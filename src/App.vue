@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<article data-name="v-button">
+		<arcticle data-name="v-button">
 			<div class="component-divide component-desc">
 				<a>
 					按钮：<span>v-button</span>
@@ -18,9 +18,9 @@
 				<v-button type="dashed" class="mgl-20">dashed</v-button>
 				<v-button type="text" class="mgl-20">text</v-button>
 			</div>
-		</article>
+		</arcticle>
 
-		<article data-name="v-spin">
+		<arcticle data-name="v-spin">
 			<div class="component-divide component-desc">
 				<a>
 					遮罩：<span>v-spin</span>
@@ -88,7 +88,7 @@
 			<div class="spin-demo" style="line-height: 100px">
 				<v-button type="primary" @click="handleSpinShow">点击全屏加载</v-button>
 			</div>
-		</article>
+		</arcticle>
 
 		<arcticle data-name="v-page">
 			<div class="component-divide component-desc">
@@ -156,6 +156,17 @@
 				</v-page>
 			</div>
 		</arcticle>
+
+		<arcticle data-name="v-button">
+			<div class="component-divide component-desc">
+				<a>
+					模态框
+				</a>
+			</div>
+			<div class="component-divide component-demo">
+				<v-button type="primary" @click="">显示</v-button>
+			</div>
+		</arcticle>
 	</div>
 </template>
 
@@ -166,12 +177,15 @@
 	import VSpin from './components/spin';
 	//Page组件
 	import VPage from './components/page';
+	//Modal组件
+	import VModal from './components/modal';
 
 	export default {
 		components: {
 			VButton,
 			VSpin,
-			VPage
+			VPage,
+			VModal
 		},
 		mounted() {
 		},
