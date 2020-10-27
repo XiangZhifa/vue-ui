@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<arcticle data-name="v-button">
+		<div data-name="v-button">
 			<div class="component-divide component-desc">
 				<a>
 					按钮：<span>v-button</span>
@@ -18,9 +18,9 @@
 				<v-button type="dashed" class="mgl-20">dashed</v-button>
 				<v-button type="text" class="mgl-20">text</v-button>
 			</div>
-		</arcticle>
+		</div>
 
-		<arcticle data-name="v-spin">
+		<div data-name="v-spin">
 			<div class="component-divide component-desc">
 				<a>
 					遮罩：<span>v-spin</span>
@@ -88,9 +88,9 @@
 			<div class="spin-demo" style="line-height: 100px">
 				<v-button type="primary" @click="handleSpinShow">点击全屏加载</v-button>
 			</div>
-		</arcticle>
+		</div>
 
-		<arcticle data-name="v-page">
+		<div data-name="v-page">
 			<div class="component-divide component-desc">
 				<a>
 					分页插件：<span>v-page</span>
@@ -155,18 +155,21 @@
 					</template>
 				</v-page>
 			</div>
-		</arcticle>
+		</div>
 
-		<arcticle data-name="v-button">
+		<div data-name="v-modal">
 			<div class="component-divide component-desc">
 				<a>
 					模态框
 				</a>
 			</div>
 			<div class="component-divide component-demo">
-				<v-button type="primary" @click="">显示</v-button>
+				<v-button type="primary" @click="modal1 = true">基础用法</v-button>
+				<v-modal v-model="modal1" title="普通模态框" @on-ok="ok" @on-cancel="cancel">
+					<div>模态框的内容</div>
+				</v-modal>
 			</div>
-		</arcticle>
+		</div>
 	</div>
 </template>
 
@@ -187,7 +190,10 @@
 			VPage,
 			VModal
 		},
-		mounted() {
+		data() {
+			return {
+				modal1: false
+			}
 		},
 		methods: {
 			handleSpinShow() {
@@ -207,6 +213,12 @@
 				setTimeout(() => {
 					this.$Spin.hide();
 				}, 3000);
+			},
+			ok () {
+				console.info('Clicked ok');
+			},
+			cancel () {
+				console.info('Clicked cancel');
 			}
 		}
 	}

@@ -9,7 +9,7 @@
 					<div :class="contentClasses" ref="content" :style="contentStyles" @click="handleClickModal">
 						<a :class="[prefixCls + '-close']" v-if="closable" @click="close">
 							<slot name="close">
-								<Icon type="ios-close"></Icon>
+								<i></i>
 							</slot>
 						</a>
 						<div :class="[prefixCls + '-header']" @mousedown="handleMoveStart" v-if="showHead">
@@ -22,8 +22,8 @@
 						</div>
 						<div :class="[prefixCls + '-footer']" v-if="!footerHide">
 							<slot name="footer">
-								<i-button type="text" @click.native="cancel">取消</i-button>
-								<i-button type="primary" :loading="buttonLoading" @click.native="ok">确定</i-button>
+								<v-button type="text" @click.native="cancel">取消</v-button>
+								<v-button type="primary" :loading="buttonLoading" @click.native="ok">确定</v-button>
 							</slot>
 						</div>
 					</div>
@@ -353,6 +353,7 @@
 		},
 		watch: {
 			value(val) {
+				console.log(val);
 				this.visible = val;
 			},
 			visible(val) {
